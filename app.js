@@ -9,6 +9,7 @@ var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api");
+var adminRouter = require("./routes/admin");
 
 var app = express();
 
@@ -69,6 +70,7 @@ if (process.env.NODE_ENV === "development") {
 // Route handler
 app.use("/api/v1", apiRouter); // api route handler
 app.use("/", indexRouter); // react handler
+app.use("/admin", adminRouter); // admin backend route handler
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
